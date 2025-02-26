@@ -55,7 +55,7 @@ function Convert() {
     try {
       // 1. Request a presigned URL from your Python server
       // Make sure to use the correct endpoint:
-      const response = await fetch('http://plasma-env.eba-ehc3x2tx.us-west-2.elasticbeanstalk.com/get_upload_url', {
+      const response = await fetch('https://plasma-env.eba-ehc3x2tx.us-west-2.elasticbeanstalk.com/get_upload_url', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ filename: file.name }),
@@ -85,7 +85,7 @@ function Convert() {
       alert('File uploaded to S3 successfully!');
 
       // 3. Request and Receive the download link for the file
-      const download_response = await fetch(`http://plasma-env.eba-ehc3x2tx.us-west-2.elasticbeanstalk.com/get_download_url?file_id=${id}`, {
+      const download_response = await fetch(`https://plasma-env.eba-ehc3x2tx.us-west-2.elasticbeanstalk.com/get_download_url?file_id=${id}`, {
         method: 'GET',
       });
       
